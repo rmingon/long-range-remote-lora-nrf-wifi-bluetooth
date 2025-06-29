@@ -3,7 +3,7 @@
 A compact, hand-held remote that combines **Wi-Fi / Bluetooth (ESP32)**, **2.4 GHz nRF24L01+** and **868/915 MHz LoRa (RFM95W)** in a single, joystick-style board.  
 It is intended as a flexible radio interface for robotics, drones, RC models, telemetry links or IoT experimentation where different wireless technologies are useful at once.
 
-| ![3 D render](3d.png) | ![Top copper](pcb.png) |
+| ![3 D render](./docs/3d.png) | ![Top copper](./docs/pcb.png) |
 | ----------------------------- | ------------------------------ |
 
 ---
@@ -52,7 +52,7 @@ It is intended as a flexible radio interface for robotics, drones, RC models, te
 ---
 
 ## Hardware Overview
-![High-level block diagram](schematic.png)
+![High-level block diagram](./docs/schematic.png)
 
 | Block | Purpose | Interfaces |
 |-------|---------|------------|
@@ -70,13 +70,13 @@ It is intended as a flexible radio interface for robotics, drones, RC models, te
 
 ## Power Architecture
 ```
-Li-Po (3 V0 – 4 V2)
+Li-Po 2S
         │
         ├─ AMS1117-5 V ───► 5 V header / accessories
         │
         └─ AMS1117-3 V3 ──► ESP32, sensors, radios (on-board)
 ```
-The USB-C port supplies 5 V when plugged; if a battery is present it is **not charged** – add an external charger if required.
+The micro-USB port supplies 5 V when plugged; if a battery is present it is **not charged** – add an external charger if required.
 
 ---
 
@@ -154,7 +154,7 @@ lib_deps =
 
 2. **Install PlatformIO** (VS Code extension or CLI).  
 3. **Select the env** in `platformio.ini`, edit radio pins if you changed the board.  
-4. **Connect USB-C**, hold **BOOT** (if populated) on first flash, press *Upload*.  
+4. **Connect micro-USB** ch340 auto-programming.  
 5. Verify serial output at **115 200 baud**.
 
 ### LoRa / nRF24L01+ demos
@@ -192,7 +192,7 @@ pio run -e esp32-remote -t upload -d firmware/examples/lora_ping
 * Li-Po charging / fuel-gauge on-board  
 * Hall-effect joysticks option  
 * Enclosure with TPU grips  
-* Support for 900 MHz nRF905 as fourth radio  
+* Support for 900 MHz nRF905 as fourth radio
 
 ---
 
