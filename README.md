@@ -148,8 +148,8 @@ lib_deps =
 1. **Clone** the repository  
 
    ```bash
-   git clone https://github.com/<user>/<repo>.git
-   cd triple-radio-remote
+   git clone git@github.com:rmingon/long-range-remote-lora-nrf-wifi-bluetooth.git
+   cd long-range-remote-lora-nrf-wifi-bluetooth
    ```
 
 2. **Install PlatformIO** (VS Code extension or CLI).  
