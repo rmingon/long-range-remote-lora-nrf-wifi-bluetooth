@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serial Plane Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Serial Plane Controller</h1>
+            <p>Connect your controller and watch the plane respond to sensor data</p>
+        </div>
+        
+        <div class="controls">
+            <button id="connectBtn" class="btn btn-connect">Connect Serial</button>
+            <button id="disconnectBtn" class="btn btn-disconnect" disabled>Disconnect</button>
+        </div>
+        
+        <div class="status" id="status">
+            Status: Disconnected
+        </div>
+        
+        <div class="flight-area" id="flightArea">
+            <div class="clouds"></div>
+            <div class="crosshairs"></div>
+            
+            <div class="data-panel" id="dataPanel">
+                <div class="data-row"><span class="data-label">S1 (Fire):</span> <span id="s1" class="switch-indicator">--</span></div>
+                <div class="data-row"><span class="data-label">S2 (Shield):</span> <span id="s2" class="switch-indicator">--</span></div>
+                <div class="data-row"><span class="data-label">H1:</span> <span id="h1">--</span></div>
+                <div class="data-row"><span class="data-label">V1:</span> <span id="v1">--</span></div>
+                <div class="data-row"><span class="data-label">H2:</span> <span id="h2">--</span></div>
+                <div class="data-row"><span class="data-label">V2:</span> <span id="v2">--</span></div>
+                <div class="data-row" style="margin-top: 10px; border-top: 1px solid #333; padding-top: 10px;">
+                    <span class="data-label">Mode:</span> <span id="flightMode">Normal</span>
+                </div>
+            </div>
+            
+            <div class="game-hud">
+                <div class="data-row">
+                    <span class="data-label">Score:</span> <span id="score">0</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Lives:</span>
+                </div>
+                <div class="life-bar" id="lifeBar">
+                    <div class="life-heart"></div>
+                    <div class="life-heart"></div>
+                    <div class="life-heart"></div>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Level:</span> <span id="level">1</span>
+                </div>
+                <div class="data-row">
+                    <span class="data-label">Enemies:</span> <span id="enemyCount">0</span>
+                </div>
+            </div>
+            
+            <div class="plane" id="plane">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Plane body -->
+                    <ellipse cx="30" cy="30" rx="25" ry="8" fill="#4A90E2" stroke="#2E5B8A" stroke-width="2"/>
+                    <!-- Wings -->
+                    <ellipse cx="30" cy="30" rx="8" ry="20" fill="#5BA0F2" stroke="#2E5B8A" stroke-width="2"/>
+                    <!-- Cockpit -->
+                    <circle cx="30" cy="25" r="6" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+                    <!-- Propeller -->
+                    <circle cx="30" cy="15" r="3" fill="#C0C0C0" stroke="#808080" stroke-width="1"/>
+                    <rect x="28" y="12" width="4" height="6" fill="#808080" rx="2"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
